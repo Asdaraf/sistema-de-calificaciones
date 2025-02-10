@@ -35,13 +35,13 @@ public class UserService {
         user.setRoles(Collections.singletonList(Role.ROLE_CLIENT));
 
         userRepository.save(user);
-        return jwtTokenProvider.generateToken(username);
+        return jwtTokenProvider.generateToken(user);
     }
 
     public String signin(String username, String password) {
         Optional<User> userOpt = userRepository.findByUsername(username);
         if (userOpt.isPresent() && passwordEncoder.matches(password, userOpt.get().getPassword())) {
-            return jwtTokenProvider.generateToken(username);
+            return jwtTokenProvider.generateToken(userOpt.get());
         }
         throw new RuntimeException("Credenciales inválidas");
     }

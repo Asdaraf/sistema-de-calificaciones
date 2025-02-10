@@ -3,6 +3,7 @@ package com.edutecno.sistemacalificacionesapi.controller;
 import com.edutecno.sistemacalificacionesapi.entity.Materia;
 import com.edutecno.sistemacalificacionesapi.service.MateriaService;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -23,6 +24,7 @@ public class MateriaController {
         return ResponseEntity.ok(nuevaMateria);
     }
 
+    @PreAuthorize("hasRole('ROLE_CLIENT')")
     @GetMapping
     public ResponseEntity<List<Materia>> getAllMaterias() {
         return ResponseEntity.ok(materiaService.findAll());

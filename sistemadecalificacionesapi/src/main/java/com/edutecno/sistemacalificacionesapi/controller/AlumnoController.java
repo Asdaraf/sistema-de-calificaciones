@@ -1,8 +1,10 @@
 package com.edutecno.sistemacalificacionesapi.controller;
 
+import com.edutecno.sistemacalificacionesapi.dto.AlumnoDTO;
 import com.edutecno.sistemacalificacionesapi.entity.Alumno;
 import com.edutecno.sistemacalificacionesapi.service.AlumnoService;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -24,8 +26,9 @@ public class AlumnoController {
         return ResponseEntity.ok(nuevoAlumno);
     }
 
+    @PreAuthorize("hasRole('ROLE_CLIENT')")
     @GetMapping
-    public ResponseEntity<List<Alumno>> getAllAlumnos() {
+    public ResponseEntity<List<AlumnoDTO>> getAllAlumnos() {
         return ResponseEntity.ok(alumnoService.findAll());
     }
 
