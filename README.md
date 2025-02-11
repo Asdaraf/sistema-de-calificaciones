@@ -9,15 +9,11 @@ Este proyecto es una aplicación para la gestión de calificaciones en una unive
 Índice
 - Características
 - Tecnologías Utilizadas
-- Estructura del Proyecto
 - Configuración
-- Backend
-- Frontend
 - Instrucciones de Ejecución
 - Endpoints Principales
 - Uso del Sistema
 - Autor
-- Licencia
 
 -------------------------------------------------------------------
 
