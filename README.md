@@ -61,6 +61,8 @@ Tecnologías Utilizadas
   - RestTemplate para consumo de APIs REST
   - Estructura del Proyecto
 
+--------------------------------------------------------------------------------------
+
 Configuración
 
 Backend
